@@ -117,20 +117,31 @@ function loadSelectedLKs() {
     }
 }
 
+// 1. Gespeicherte LKs aus Cookies laden
 loadSelectedLKs();
 
+// 2. Timer initial anzeigen
 updateTimer("selectLk1", "lk1");
 updateTimer("selectLk2", "lk2");
-updateTimer("selectLk3", "lk3");    
+updateTimer("selectLk3", "lk3");
 
+// 3. Timer jede Sekunde aktualisieren
 setInterval(() => {
     updateTimer("selectLk1", "lk1");
     updateTimer("selectLk2", "lk2");
     updateTimer("selectLk3", "lk3");
-    console.log("Timer updated");
 }, 1000);
 
-document.getElementById("selectLk1").addEventListener("change", updateCookies);
-document.getElementById("selectLk2").addEventListener("change", updateCookies);
-document.getElementById("selectLk3").addEventListener("change", updateCookies);
-
+// 4. Änderungen an den Selects speichern
+document.getElementById("selectLk1").addEventListener("change", () => {
+    updateCookies();
+    updateTimer("selectLk1", "lk1");
+});
+document.getElementById("selectLk2").addEventListener("change", () => {
+    updateCookies();
+    updateTimer("selectLk2", "lk2");
+});
+document.getElementById("selectLk3").addEventListener("change", () => {
+    updateCookies();
+    updateTimer("selectLk3", "lk3");
+});

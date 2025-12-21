@@ -1,0 +1,39 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.lk-label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #1976D2;
+    font-size: 16px;
+
+}
+
+.termin {
+    margin-bottom: 15px;
+}
+
+.lk-select {
+    padding: 6px 10px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    border: 1px solid #1976D2;    /* dezentes Blau */
+    border-radius: 4px;
+    background-color: #fff;        /* weißer Hintergrund */
+    color: #333;
+    cursor: pointer;
+    appearance: none;              /* Standardpfeil entfernen */
+    transition: border-color 0.15s ease;
+}
+
+.date-text {
+    margin-left: 5px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}

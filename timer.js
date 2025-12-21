@@ -93,6 +93,31 @@ function updateTimer(selectId, spanId) {
 
 
 }
+
+function updateCookies() {
+    const lk1 = document.getElementById("selectLk1").value;
+    const lk2 = document.getElementById("selectLk2").value;
+    const lk3 = document.getElementById("selectLk3").value;
+
+    const expires = new Date();
+    expires.setTime(expires.getTime() + 365*24*60*60*1000); // 1 Jahr
+    document.cookie = `selectedLKs=${lk1},${lk2},${lk3}; expires=${expires.toUTCString()}; path=/`;
+}
+
+
+function loadSelectedLKs() {
+    const cookie = document.cookie.split('; ').find(c => c.startsWith('selectedLKs='));
+    if (!cookie) return;
+
+    const values = cookie.split('=')[1].split(',');
+    if (values.length === 3) {
+        document.getElementById("selectLk1").value = values[0] || "Mathe";
+        document.getElementById("selectLk2").value = values[1] || "Informatik";
+        document.getElementById("selectLk3").value = values[2] || "Physik";
+    }
+}
+
+
 updateTimer("selectLk1", "lk1");
 updateTimer("selectLk2", "lk2");
 updateTimer("selectLk3", "lk3");    

@@ -40,3 +40,16 @@ body {
     color: #333;
     font-weight: bold;
 }
+
+.title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* moderne Schrift */
+    font-size: 2rem;      /* größere Schrift */
+    font-weight: 700;     /* fett */
+    color: #B00020;       /* passendes Rot wie bei Tagen */
+    text-align: center;   /* zentriert */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2); /* leichter Schatten */
+    margin-bottom: 0.5em;
+    letter-spacing: 1px;  /* etwas mehr Abstand zwischen Buchstaben */
+    text-decoration: underline;
+    text-decoration-color: #0D47A1;
+}

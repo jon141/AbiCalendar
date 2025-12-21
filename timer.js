@@ -117,6 +117,7 @@ function loadSelectedLKs() {
     }
 }
 
+loadSelectedLKs();
 
 updateTimer("selectLk1", "lk1");
 updateTimer("selectLk2", "lk2");
@@ -128,3 +129,8 @@ setInterval(() => {
     updateTimer("selectLk3", "lk3");
     console.log("Timer updated");
 }, 1000);
+
+document.getElementById("selectLk1").addEventListener("change", updateCookies);
+document.getElementById("selectLk2").addEventListener("change", updateCookies);
+document.getElementById("selectLk3").addEventListener("change", updateCookies);
+

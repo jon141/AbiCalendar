@@ -36,7 +36,7 @@ body {
 
 .date-text {
     margin-left: 0px;
-    font-size: 20px;
+    font-size: 15px;
     color: #333;
     font-weight: bold;
 }
@@ -54,4 +54,32 @@ body {
     border-bottom: 2px solid #0D47A1; /* stabiler Unterstrich */
     padding-bottom: 0px;
     margin-bottom: 0.5em;
+}
+
+
+.footer {
+  margin-top: 5rem;
+  background: #979ca8; /* dunkles Blau */
+  color: #093263;
+  font-size: 20p;
+  text-align: center;
+}
+
+.footer {
+    margin-top: 4rem;
+    padding: 12px 20px;
+    background-color: #e3e6eb;   /* passt zum hellen Body */
+    color: #333;
+    font-size: 0.9rem;
+    border-top: 2px solid #1976D2;  /* gleiche Akzentfarbe wie LK */
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+.footer p:last-child {
+    text-align: right;
+    font-weight: 500;
+    color: #555;
 }

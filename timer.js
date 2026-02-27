@@ -37,7 +37,7 @@ let termine = {
 
 }
 
-function updateTimer(selectId, spanId) {
+function updateTimer(selectId, spanId, dateValueId) {
     const lk = document.getElementById(selectId);
     let dateTime = termine[lk.value];
     const timeLeft = timeUntil(dateTime);
@@ -91,6 +91,11 @@ function updateTimer(selectId, spanId) {
     
     document.getElementById(spanId).innerHTML = timerText;
 
+        // Datum anzeigen
+        let date_span = document.getElementById(dateValueId);
+        let dateObj = new Date(dateTime);
+        let options = { year: 'numeric', month: 'long', day: 'numeric' };
+        date_span.textContent = dateObj.toLocaleDateString('de-DE', options);
 
 }
 
@@ -121,27 +126,27 @@ function loadSelectedLKs() {
 loadSelectedLKs();
 
 // 2. Timer initial anzeigen
-updateTimer("selectLk1", "lk1");
-updateTimer("selectLk2", "lk2");
-updateTimer("selectLk3", "lk3");
+updateTimer("selectLk1", "lk1", "date-value-1");
+updateTimer("selectLk2", "lk2", "date-value-2");
+updateTimer("selectLk3", "lk3", "date-value-3");
 
 // 3. Timer jede Sekunde aktualisieren
 setInterval(() => {
-    updateTimer("selectLk1", "lk1");
-    updateTimer("selectLk2", "lk2");
-    updateTimer("selectLk3", "lk3");
+    updateTimer("selectLk1", "lk1", "date-value-1");
+    updateTimer("selectLk2", "lk2", "date-value-2");
+    updateTimer("selectLk3", "lk3", "date-value-3");
 }, 1000);
 
 // 4. Änderungen an den Selects speichern
 document.getElementById("selectLk1").addEventListener("change", () => {
     updateCookies();
-    updateTimer("selectLk1", "lk1");
+    updateTimer("selectLk1", "lk1", "date-value-1");
 });
 document.getElementById("selectLk2").addEventListener("change", () => {
     updateCookies();
-    updateTimer("selectLk2", "lk2");
+    updateTimer("selectLk2", "lk2", "date-value-2");
 });
 document.getElementById("selectLk3").addEventListener("change", () => {
     updateCookies();
-    updateTimer("selectLk3", "lk3");
+    updateTimer("selectLk3", "lk3", "date-value-3");
 });
